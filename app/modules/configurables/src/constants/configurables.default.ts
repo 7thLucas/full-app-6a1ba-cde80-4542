@@ -12,35 +12,92 @@ export type TBrandColor = {
   accent: string;
 };
 
+export type TSkyPalette = {
+  zenith: string;
+  mid: string;
+  horizon: string;
+  sun: string;
+  fog: string;
+};
+
+export type TGroundPalette = {
+  grass: string;
+  grassShadow: string;
+  dirtPath: string;
+  dirtUnderside: string;
+  pondWater: string;
+  rock: string;
+};
+
+export type TMagicPalette = {
+  crystal: string;
+  sparkles: string;
+  fruit: string;
+  fruitHighlight: string;
+};
+
 export type TDefaultConfigurableData = {
   appName: string;
   logoUrl: string;
   brandColor: TBrandColor;
-  // Mirror new schema fields here. Example:
-  //   maxItemsPerPage?: number;
-  //   enableNotifications?: boolean;
-  //   featuredCategories?: string[];
+  tagline?: string;
+  welcomeMessage?: string;
+  skyPalette?: TSkyPalette;
+  groundPalette?: TGroundPalette;
+  magicPalette?: TMagicPalette;
+  playerName?: string;
+  villagerName?: string;
+  villagerDialogue?: string;
+  mailboxNote?: string;
+  questSteps?: string[];
+  showControlsHint?: boolean;
+  showQuestBubble?: boolean;
+  bloomIntensity?: number;
+  sunIntensity?: number;
 };
 
 export const defaultConfigurablesData: TDefaultConfigurableData = {
-  appName: "FILL_APP_NAME_HERE",
-  logoUrl: "FILL_LOGO_URL_HERE",
+  appName: "Driftholm",
+  logoUrl: "https://images.unsplash.com/photo-1502081276748-fa1f0f3acb78?w=128&h=128&fit=crop",
   brandColor: {
-    primary: "FILL_PRIMARY_COLOR_HERE",
-    secondary: "FILL_SECONDARY_COLOR_HERE",
-    accent: "FILL_ACCENT_COLOR_HERE",
+    primary: "#C0408C",   // magenta sunset
+    secondary: "#FF8A5C", // warm orange
+    accent: "#A6E8FF",    // crystal cyan
   },
-  // ─────────────────────────────────────────────────────────────────────
-  // Add new field defaults here. See RULES.md §5 for per-type shape.
-  // Required branding fields → use the FILL_X_HERE placeholder pattern.
-  // Optional/typed defaults → real value with a "// fill it here" comment:
-  //
-  //   maxItemsPerPage: 12,                     // fill it here
-  //   enableNotifications: true,               // fill it here
-  //   featuredCategories: [],                  // fill it here
-  //   defaultLanguage: "en",                   // must match enum options
-  //   launchDate: "2025-01-01T00:00:00.000Z",  // ISO-8601
-  //   heroImage: "",                           // resolved URL after upload
-  //   galleryImages: [],                       // array of resolved URLs
-  // ─────────────────────────────────────────────────────────────────────
+  tagline: "A cozy floating island, lit by golden hour.",
+  welcomeMessage: "Take a breath. Explore.",
+  skyPalette: {
+    zenith: "#5B2A86",
+    mid: "#C0408C",
+    horizon: "#FF8A5C",
+    sun: "#FFD27A",
+    fog: "#E8A4C9",
+  },
+  groundPalette: {
+    grass: "#7BC86C",
+    grassShadow: "#4F8F4A",
+    dirtPath: "#B58968",
+    dirtUnderside: "#6E4A35",
+    pondWater: "#5BB3C9",
+    rock: "#8A8597",
+  },
+  magicPalette: {
+    crystal: "#A6E8FF",
+    sparkles: "#FFE0A6",
+    fruit: "#FF6B5C",
+    fruitHighlight: "#FFB55C",
+  },
+  playerName: "Wanderer",
+  villagerName: "Elder Pip",
+  villagerDialogue: "Welcome to Driftholm, traveler. The crystals hum louder at sunset — pick a fruit and rest a while.",
+  mailboxNote: "A note flutters out: \"The wind has been gentle this week. — P\"",
+  questSteps: [
+    "Explore the island",
+    "Talk to the villager",
+    "Collect 3 fruits",
+  ],
+  showControlsHint: true,
+  showQuestBubble: true,
+  bloomIntensity: 0.9,
+  sunIntensity: 1.8,
 };
